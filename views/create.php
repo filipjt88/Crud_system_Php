@@ -11,20 +11,33 @@
 <body class="container mt-5">
 
     <h2>Dodavanje korisnika</h2>
-    
-    <form action="../core/store.php" method="POST">
+
+    <!-- Forma za dodavanje korisnika -->
+    <form action="./../store.php" method="POST">
         <div class="mb-3">
             <label for="firstname" class="form-label">Ime:</label>
-            <input type="text" class="form-control" name="firstname">
+            <input type="text" class="form-control" name="firstname" value="<?php echo isset($_POST['firstname']) ? $_POST['firstname'] : ''; ?>">
         </div>
         <div class="mb-3">
             <label for="lastname" class="form-label">Prezime:</label>
-            <input type="text" class="form-control" name="lastname">
+            <input type="text" class="form-control" name="lastname" value="<?php echo isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" name="email">
+            <input type="email" class="form-control" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
         </div>
+
+        <!-- Prikazivanje grešaka ako postoje -->
+        <?php if (!empty($errors)): ?>
+            <div class="alert alert-danger">
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li><?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
         <button type="submit" class="btn btn-primary">Dodaj korisnika</button>
     </form>
 
