@@ -15,15 +15,15 @@
     <form action="../core/store.php" method="POST">
         <div class="mb-3">
             <label for="firstname" class="form-label">Ime:</label>
-            <input type="text" class="form-control" name="firstname" required>
+            <input type="text" class="form-control" name="firstname">
         </div>
         <div class="mb-3">
             <label for="lastname" class="form-label">Prezime:</label>
-            <input type="text" class="form-control" name="lastname" required>
+            <input type="text" class="form-control" name="lastname">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" name="email" required>
+            <input type="email" class="form-control" name="email">
         </div>
         <button type="submit" class="btn btn-primary">Dodaj korisnika</button>
     </form>
