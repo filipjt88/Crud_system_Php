@@ -1,4 +1,12 @@
-<?php require_once "../core/connection.php"; ?>
+<?php
+session_start();
+require_once "../core/connection.php";
+
+// Uzimamo greške iz sesije ako postoje
+$errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
+unset($_SESSION['errors']); // Obriši greške nakon prikazivanja
+?>
+
 
 <!DOCTYPE html>
 <html lang="sr">
