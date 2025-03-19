@@ -7,6 +7,7 @@ $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
 unset($_SESSION['errors']); // Obriši greške nakon prikazivanja
 ?>
 
+
 <!DOCTYPE html>
 <html lang="sr">
 <head>
